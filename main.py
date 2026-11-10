@@ -77,3 +77,13 @@ async def chat_proxy(request: Request):
 @app.get("/")
 async def root():
     return {"status": "Mirage AI Backend is running successfully."}
+@app.get("/")
+async def root():
+    return {"status": "Mirage AI Backend is running successfully."}
+
+# 이 부분을 코드 맨 아래에 추가하세요!
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
